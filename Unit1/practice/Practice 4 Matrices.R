@@ -214,16 +214,16 @@ myplot <- function(z, who=1:10) {
 }
 
 #Visualize the new matrices
-(FreeThrows)
-(FreeThrowAttem)
+myplot(FreeThrows)
+myplot(FreeThrowsAttem)
 
 #Part 1 - Free Throw Attempts Per Game 
 #(You will need the Games matrix)
-myplot(FreeThrowAttem/Games)
+myplot(FreeThrowsAttem/Games)
 #Notice how Chris Paul gets few attempts per game
 
 #Part 2 - Free Throw Accuracy
-myplot(FreeThrows / FreeThrowAttempts)
+myplot(FreeThrows / FreeThrowsAttem)
 #And yet Chris Paul's accuracy is one of the highest
 #Chances are his team would get more points if he had more FTA's
 #Also notice that Dwight Howard's FT Accuracy is extremely poor
