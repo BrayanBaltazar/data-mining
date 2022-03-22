@@ -105,4 +105,8 @@ qplot(data = vData2013, x= Fertility.Rate,
      color = Region, size =I(2), shape = I(19), alpha = I(.5),
      main = "Fertility Rate X Life Expectancy 2013")
 ```
+## Fertility Rate X Life Expectancy 1960
+![](https://github.com/BrayanBaltazar/data-mining/blob/Unit_1/Unit1/evaluative/Graf1960.png)
 
+## Fertility Rate X Life Expectancy 2013
+![](https://github.com/BrayanBaltazar/data-mining/blob/Unit_1/Unit1/evaluative/Graf2013.png)
