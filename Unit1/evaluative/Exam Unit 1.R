@@ -27,37 +27,38 @@ Life_Expectancy_At_Birth_2013 <- c(75.3286585365854,60.0282682926829,51.86617073
 
 #Install function to graph
 install.packages("ggplot2")
-library(ggplot2)
 
 #Create dataframe
 Dframe <- data.frame(Country = Country_Code, L1960 = Life_Expectancy_At_Birth_1960, L2013 = Life_Expectancy_At_Birth_2013)
-
-#We will create the vectors and filter for new dataframe
-
-val1960 <- val$Year == 1960
-val1960 <- val[val60, ]
-val1960
-
-val1960$L1960 <- NULL
-
-val2013 <- val$Year == 2013
-val2013 <- val[val2013,]
-val2013
-
-val2013$L2013 <- NULL
 
 #Perform merging between vectors and functional data
 
 merge <- merge(read, Dframe, by.x = "Country.Code", by.y = "Country")
 
-#Plots
+#We will create the vectors and filter for new dataframe
 
-Graf(data = val1960, x= Fertility.Rate, 
+vData1960 <- merge$Year == 1960
+vData1960 <- merge[vData1960, ]
+vData1960
+
+vData1960$L1960 <- NULL
+
+vData2013 <- merge$Year == 2013
+vData2013 <- merge[vData2013,]
+vData2013
+
+vData2013$L2013 <- NULL
+
+
+#Plots
+library(ggplot2)
+
+qplot(data = vData1960, x= Fertility.Rate, 
      y = Life_Expectancy_At_Birth_1960, 
      color = Region, size =I(2), shape = I(19), alpha = I(.5),
      main = "Fertility Rate X Life Expectancy 1960")
 
-Graf(data = val2013, x= Fertility.Rate, 
+qplot(data = vData2013, x= Fertility.Rate, 
      y = Life_Expectancy_At_Birth_2013, 
      color = Region, size =I(2), shape = I(19), alpha = I(.5),
-     main = "Fertility Rate X Life Expectancy 1960")
+     main = "Fertility Rate X Life Expectancy 2013")
