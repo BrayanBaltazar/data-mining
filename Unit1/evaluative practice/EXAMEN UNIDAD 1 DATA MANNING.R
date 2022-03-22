@@ -31,6 +31,8 @@ CODECountry <- c("ABW","AFG","AGO","ALB","ARE","ARG","ARM","ATG","AUS","AUT","AZ
                   "PNG","POL","PRI","PRT","PRY","PYF","QAT","ROU","RUS","RWA","SAU","SDN","SEN","SGP","SLB","SLE","SLV","SOM","SRB","SSD","STP","SUR","SVK","SVN","SWE",
                   "SWZ","SYC","SYR","TCD","TGO","THA","TJK","TKM","TLS","TON","TTO","TUN","TUR","TZA","UGA","UKR","URY","USA","UZB","VCT","VEN","VIR","VNM",
                   "VUT","PSE","WSM","YEM","ZAF","COD","ZMB","ZWE")
+
+
 RegionsDATASET <- c("The Americas","Asia","Africa","Europe","Middle East","The Americas","Asia","The Americas","Oceania",
                     "Europe","Asia","Africa","Europe","Africa","Africa","Asia","Europe","Middle East","The Americas","Europe","Europe","The Americas",
                     "The Americas","The Americas","The Americas","The Americas","Asia","Asia","Africa","Africa","The Americas","Europe",
