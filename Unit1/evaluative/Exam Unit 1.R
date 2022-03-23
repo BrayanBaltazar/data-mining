@@ -50,7 +50,7 @@ vData2013
 vData2013$L2013 <- NULL
 
 
-#Plots
+#Graphics
 library(ggplot2)
 
 qplot(data = vData1960, x= Fertility.Rate, 
