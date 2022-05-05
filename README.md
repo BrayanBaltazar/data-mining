@@ -110,3 +110,7 @@ outlier.shape = NA)+ theme(plot.title = element_text(color="Black",size=16, face
 axis.title.x = element_text(color="Purple", size=16), axis.title.y = element_text(color="Purple", size=16))
 +  ggtitle("Domestic Gross % by Genre") + ylab("GrossUS") + xlab("Genre")
 ```
+
+# generated graph
+
+![](https://github.com/BrayanBaltazar/data-mining/blob/Unit_2/Evaluation/Exam2/Graf.png)
