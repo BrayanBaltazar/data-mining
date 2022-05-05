@@ -4,11 +4,11 @@ library(ggplot2)
 
 getwd()
 
-setwd("C:/Users/braya/Desktop/Unit_2")
+setwd("C:/data-mining/Evaluation/Exam2")
 
 getwd()
 
-Pelicula <- read.csv("Project-Data.csv")
+Pelicula <- read.csv(file.choose())
 
 Pelicula <- Pelicula [c(3,6,8,17)]
 
