@@ -30,7 +30,7 @@ Pelicula$Studio=="Sony"|
 Pelicula$Studio=="Universal" |
 Pelicula$Studio=="WB",]
 
-colnames(Pelicula) <- c("Genre", "Studio", "BudgetIn $ M", "GrossUS")|
+colnames(Pelicula) <- c("Genre", "Studio", "BudgetIn $ M", "GrossUS")
 
 
 
