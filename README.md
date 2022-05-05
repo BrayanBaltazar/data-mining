@@ -22,9 +22,9 @@
 
 <H2><p align="Center">PROFESOR: JOSE CHRISTIAN ROMERO HERNANDEZ</p></H2>
 
-<H2><p align="Center">Practica Evaluatoria U1</p></H2>
+<H2><p align="Center">Practica Evaluatoria U2</p></H2>
 
-<H2><p align="Center">FECHA: 22/03/22</p></H2>
+<H2><p align="Center">FECHA: 04/05/22</p></H2>
 
 <br>
 <br>
