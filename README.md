@@ -31,11 +31,13 @@
 <br>
 <br>
 <br>
-<br>
-<br>
-<br>
+
 
 ## EVALUATION UNIT 2
+
+## Introduction
+
+A new code must be created to obtain the same data from the graph, since the previous code was completely lost, and what we want to achieve with this one is that it is as similar as possible to the original code, which was provided to us with a new data set to make this possible.
 
 # Installation of packages for use of graphing
 
