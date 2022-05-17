@@ -38,6 +38,7 @@ We will now perform a regression of the lm or linear model with the relationship
 
 ```R
 # Fitting Simple Linear Regression to the Training set
+
 regressor = lm(formula = Salary ~ YearsExperience,data = dataset)
 summary(regressor)
 ```
@@ -46,6 +47,7 @@ We now make the prediction on the test data with the regressor.
 
 ```R
 # Predicting the Test set results
+
 y_pred = predict(regressor, newdata = test_set)
 ```
 
