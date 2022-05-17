@@ -1,6 +1,10 @@
 #Baltazar Moreno Brayan
 #Ramos Verdin Paula Andrea
 
+getwd()
+setwd("C:/Users/paula/OneDrive/Documentos/9no Semestre/2.- Mineria de datos/Unidad 3")
+getwd()
+
 # Import the Dataset
 
 dataset <- read.csv('Salary_Data.csv')
@@ -23,6 +27,29 @@ summary(regressor)
 # Predicting the Test set results
 
 y_pred = predict(regressor, newdata = test_set)
+
+# Visualising the Training set results
+
+library(ggplot2)
+ggplot()+
+  geom_point(aes(x=training_set$YearsExperience, y=training_set$Salary),
+             color = 'red') +
+  geom_line(aes(x = training_set$YearsExperience, y = predict(regressor, newdata = training_set)),
+            color = 'blue') +
+  ggtitle('Salary vs Experience (Training Set)') +
+  xlab('Years of experience') +
+  ylab('Salary')
+
+# Visualising the Test set 
+
+ggplot() +
+  geom_point(aes(x=test_set$YearsExperience, y=test_set$Salary),
+             color = 'red') +
+  geom_line(aes(x = training_set$YearsExperience, y = predict(regressor, newdata = training_set)),
+            color = 'blue') +
+  ggtitle('Salary vs Experience (Test Set)') +
+  xlab('Years of experience') +
+  ylab('Salary')
 
 
 
