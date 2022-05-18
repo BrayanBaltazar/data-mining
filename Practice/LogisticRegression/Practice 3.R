@@ -38,7 +38,7 @@ prob_pred
 y_pred = ifelse(prob_pred > 0.5, 1, 0)
 y_pred
 
-# Making the Confusion Metrix
+# Making the Confusion Matrix
 
 cm = table(test_set[, 3], y_pred)
 cm
