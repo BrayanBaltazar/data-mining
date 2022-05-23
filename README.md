@@ -302,6 +302,7 @@ y_pred = knn(train = training_set[, -3],
              k = 5,
              prob = TRUE)
 ```
+## Visualization the Trainig Set result 
 
 We generate the first graph (Training Set).
 
@@ -324,6 +325,8 @@ points(set, pch = 21, bg = ifelse(set[, 3] == 1, 'green4', 'red3'))
 ![](https://github.com/BrayanBaltazar/data-mining/blob/Unit_3/Practice/KNN/Training%20Set.png)
 
 In this graph we present the results in formation, within which we see the estimated salary along with the age of the people. And we can also see a large percentage of people who have a good economic situation and can make the purchases they want.
+
+## Visualization the Test set result
 
 We generate the second graph (Test Set).
 
