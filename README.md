@@ -1,3 +1,32 @@
+<p align="center">
+    <img alt="Logo" src="https://www.tijuana.tecnm.mx/wp-content/uploads/2021/08/liston-de-logos-oficiales-educacion-tecnm-FEB-2021.jpg" width=850 height=250>
+</p>
+
+<H2><p align="Center">TECNOLÓGICO NACIONAL DE MÉXICO</p></H2>
+
+<H2><p align="Center">INSTITUTO TECNOLÓGICO DE TIJUANA</p></H2>
+
+<H2><p align="Center">SUBDIRECCIÓN ACADÉMICA</p></H2>
+
+<H2><p align="Center">DEPARTAMENTO DE SISTEMAS Y COMPUTACIÓN</p></H2>
+
+<H2><p align="Center">NOMBRE DE LOS ALUMNOS: </p></H2>
+
+<H2><p align="Center">BALTAZAR MORENO BRAYAN (N. CONTROL: 18210703)</p></H2>
+
+<H2><p align="Center">RAMOS VERDIN PAULA ANDREA (N.CONTROL: 18210721)</p></H2>
+
+<H2><p align="Center">Carrera: Ingeniería Informática</p></H2>
+
+<H2><p align="Center">MATERIA: Mineria de Datos</p></H2>
+
+<H2><p align="Center">PROFESOR: JOSE CHRISTIAN ROMERO HERNANDEZ</p></H2>
+
+
+<br>
+<br>
+<br>
+
 ##  Unit 3
 
 ## Simple Linear Regression
@@ -228,3 +257,92 @@ points(set, pch = 21, bg = ifelse(set[, 3] == 1, 'green4', 'red3'))
 ![](https://github.com/BrayanBaltazar/data-mining/blob/Unit_3/Practice/LogisticRegression/Test%20Set.png)
 
 Unlike the previous graph, we can see that in this graph there are more red dots than green dots, which shows that most do not have a good salary estimate for their purchases.
+
+## K-NN
+
+# Practice 4
+
+First we import our dataset.
+
+```R
+dataset = read.csv('Social_Network_Ads.csv')
+dataset = dataset[3:5]
+```
+
+Coding of the target characteristic in the code.
+
+```R
+dataset$Purchased = factor(dataset$Purchased, levels = c(0, 1))
+```
+
+Then the data is split, one for testing and one for training, asking for the data to be split from 0.75 and these values will be taken as the entertainment data from 0.75 and these values will be taken as the test data.
+
+```R
+library(caTools)
+set.seed(123)
+split = sample.split(dataset$Purchased, SplitRatio = 0.75)
+training_set = subset(dataset, split == TRUE)
+test_set = subset(dataset, split == FALSE)
+```
+
+We split the data by scala feature.
+
+```R
+training_set[-3] = scale(training_set[-3])
+test_set[-3] = scale(test_set[-3])
+```
+
+Then we perform the KNN adaptation, first we import the class library and then the data is split asking first, that the test data is less than -3 and then that the training data is greater than 3.
+
+```R
+library(class)
+y_pred = knn(train = training_set[, -3],
+             test = test_set[, -3],
+             cl = training_set[, 3],
+             k = 5,
+             prob = TRUE)
+```
+
+We generate the first graph (Training Set).
+
+```R
+library(ElemStatLearn)
+set = training_set
+X1 = seq(min(set[, 1]) - 1, max(set[, 1]) + 1, by = 0.01)
+X2 = seq(min(set[, 2]) - 1, max(set[, 2]) + 1, by = 0.01)
+grid_set = expand.grid(X1, X2)
+colnames(grid_set) = c('Age', 'EstimatedSalary')
+y_grid = knn(train = training_set[, -3], test = grid_set, cl = training_set[, 3], k = 5)
+plot(set[, -3],
+     main = 'K-NN (Training set)',
+     xlab = 'Age', ylab = 'Estimated Salary',
+     xlim = range(X1), ylim = range(X2))
+contour(X1, X2, matrix(as.numeric(y_grid), length(X1), length(X2)), add = TRUE)
+points(grid_set, pch = '.', col = ifelse(y_grid == 1, 'springgreen3', 'tomato'))
+points(set, pch = 21, bg = ifelse(set[, 3] == 1, 'green4', 'red3'))
+```
+![](https://github.com/BrayanBaltazar/data-mining/blob/Unit_3/Practice/KNN/Training%20Set.png)
+
+In this graph we present the results in formation, within which we see the estimated salary along with the age of the people. And we can also see a large percentage of people who have a good economic situation and can make the purchases they want.
+
+We generate the second graph (Test Set).
+
+```R
+library(ElemStatLearn)
+set = test_set
+X1 = seq(min(set[, 1]) - 1, max(set[, 1]) + 1, by = 0.01)
+X2 = seq(min(set[, 2]) - 1, max(set[, 2]) + 1, by = 0.01)
+grid_set = expand.grid(X1, X2)
+colnames(grid_set) = c('Age', 'EstimatedSalary')
+y_grid = knn(train = training_set[, -3], test = grid_set, cl = training_set[, 3], k = 5)
+plot(set[, -3],
+     main = 'K-NN (Test set)',
+     xlab = 'Age', ylab = 'Estimated Salary',
+     xlim = range(X1), ylim = range(X2))
+contour(X1, X2, matrix(as.numeric(y_grid), length(X1), length(X2)), add = TRUE)
+points(grid_set, pch = '.', col = ifelse(y_grid == 1, 'springgreen3', 'tomato'))
+points(set, pch = 21, bg = ifelse(set[, 3] == 1, 'green4', 'red3'))
+```
+![](https://github.com/BrayanBaltazar/data-mining/blob/Unit_3/Practice/KNN/Training%20Set.png)
+
+Unlike the previous graph, in this one we can see that the test data is a little more on the red side, these are more people whose estimated salary is lower.
