@@ -22,7 +22,7 @@ test_set=subset(dataset,split==FALSE)
 training_set[-3]=scale(training_set[-3])
 test_set[-3]=scale(test_set[-3])
 
-classifier=naiveBayes(formula=Purchased ~ . ,
+classifier=naiveBayes(=Purcformulahased ~ . ,
                       data=training_set,
                       type='C-classification',
                       kernel='linear')
