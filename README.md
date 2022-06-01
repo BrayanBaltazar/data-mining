@@ -1,6 +1,10 @@
 # Evaluation U4
 
+## Introduction
+
 Implement the K-Means clustering model with the Iris.csv dataset found at  using the found at https://github.com/jcromerohdz/iris using the kmeans() method in R. Once the clustering model is obtained do the corresponding data visualization analysis.
+
+## Development
 
 First we import the csv data we are going to use, then we assign the columns we are going to work with.
 
