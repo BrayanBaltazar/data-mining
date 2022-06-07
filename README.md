@@ -427,6 +427,62 @@ Unlike the previous graph, in this one we can see that the test data is a little
 <br>
 <br>
 
+# Unit 2
+
+## Practice 1 U2
+
+Generate three graphs with R that tell the story of the data,
+The first to be a scatter plot of points,
+The second is a faceted graph
+The third is a graph that tells us something statistical such as the distribution of the data and that
+and that contains the theme layer.
+
+```R
+#Read CSV
+cars <- read.csv(file.choose())
+```
+
+## Plots
+
+```R
+#Dispersion de Puntos
+library(ggplot2)
+ggplot(cars, aes(x=Cylinders, y=Model,
+
+color=Origin)) +
+
+geom_point()
+```
+![](https://github.com/BrayanBaltazar/data-mining/blob/Unit_2/Practice/T1.png)
+
+## Facetas
+
+```R
+f <- ggplot(cars, aes(x=Cylinders, y=Displacement,
+
+color=Origin))
+
+f + geom_point() + facet_grid(Origin~.)
+```
+![](https://github.com/BrayanBaltazar/data-mining/blob/Unit_2/Practice/T2.png)
+
+## Distribucion
+
+```R
+a <- ggplot(cars, aes(x=Cylinders))
+b <- a + geom_histogram(aes(fill=Origin),
+
+color="Black")
+
+b +
+xlab("Origen x Cylinders") +
+ylab("Number of Displacement") + ggtitle("Origin of cars") +
+theme(axis.title.x = element_text(color = "Black", size=10),
+axis.title.y = element_text(color = "Black", size=10),
+)
+```
+![](https://github.com/BrayanBaltazar/data-mining/blob/Unit_2/Practice/T3.png)
+
 
 ## EVALUATION UNIT 2
 
